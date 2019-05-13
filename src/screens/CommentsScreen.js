@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import TabNavigator from './src/navigation';
+import { Text, View, StyleSheet } from 'react-native';
 
-export default class App extends React.Component {
+class CommentsScreen extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -11,8 +10,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TabNavigator />
-        {/* <LoginNavigator /> */}
+        <Text>Comments</Text>
       </View>
     );
   }
@@ -21,6 +19,9 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
+
+export default CommentsScreen;

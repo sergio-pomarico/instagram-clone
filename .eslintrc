@@ -4,6 +4,7 @@
     "prettier",
     "prettier/react"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -17,13 +18,17 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es6",
+        "trailingComma": "es5",
         "singleQuote": true,
         "printWidth": 100
       }
     ],
     "no-use-before-define": 0,
-    "jsx-a11y/accessible-emoji": 0
+    "jsx-a11y/accessible-emoji": 0,
+    "react/forbid-prop-types": [
+      "object",
+      "func"
+    ]
   },
   "plugins": [
     "prettier"
