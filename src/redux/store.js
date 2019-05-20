@@ -1,7 +1,9 @@
 import { createStore } from 'redux';
 import reducers from './reducers';
 
-const initialState = {};
+const initialState = {
+  root: [],
+};
 
 /* eslint-disable */
 const Store = createStore(
