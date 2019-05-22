@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import SignUpForm from './components/SignUpForm';
 
 class SignUpScreen extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class SignUpScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Sign Up</Text>
+        <SignUpForm />
       </View>
     );
   }
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 16,
   },
 });
 

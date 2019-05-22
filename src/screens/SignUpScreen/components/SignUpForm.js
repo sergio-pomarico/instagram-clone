@@ -6,14 +6,16 @@ import PropTypes from 'prop-types';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 
-const LoginForm = props => {
+const SignUpForm = props => {
   const { handleSubmit } = props;
   return (
     <View style={styles.container}>
+      <Field name="name" component={Input} placeholder="name" />
       <Field name="email" component={Input} placeholder="email" isEmail />
       <Field name="password" component={Input} placeholder="password" isPass />
+      <Field name="confirm" component={Input} placeholder="confirm password" isPass />
       <Button
-        text="Login"
+        text="Register"
         onPress={handleSubmit(values => {
           console.log(values);
         })}
@@ -24,6 +26,12 @@ const LoginForm = props => {
 
 const validate = values => {
   const errors = {};
+
+  if (!values.name) {
+    errors.name = 'name is required';
+  } else if (values.name.length < 5) {
+    errors.name = 'name must have at least 5 characters';
+  }
 
   if (!values.email) {
     errors.email = 'email is required';
@@ -37,19 +45,26 @@ const validate = values => {
     errors.password = 'password must have at least 6 characters';
   }
 
+  if (!values.confirm) {
+    errors.confirm = 'confirm password is required';
+  } else if (values.password !== values.confirm) {
+    errors.confirm = 'the password must match';
+  }
+
   return errors;
 };
 
-LoginForm.propTypes = {
+SignUpForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
   },
 });
 
-export default reduxForm({ form: 'LoginForm', validate })(LoginForm);
+export default reduxForm({ form: 'SignUpForm', validate })(SignUpForm);
