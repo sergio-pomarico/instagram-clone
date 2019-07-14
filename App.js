@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 
 // import TabNavigator from './src/navigation';
 import LoginNavigator from './src/navigation/login';
-import Store from './src/redux/store';
+import Store from './src/store';
 
 export default class App extends Component {
   constructor() {
