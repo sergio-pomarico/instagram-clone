@@ -1,4 +1,4 @@
-package com.instagram_clone;
+package co.codeo.instagram_clone;
 
 import com.facebook.react.ReactActivity;
 
