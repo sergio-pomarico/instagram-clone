@@ -8,6 +8,7 @@ target 'instagram_clone' do
   # Pods for instagram_clone
   platform :ios, '9.0'
   pod 'Firebase/Core', '~> 6.3.0'
+  pod 'Firebase/Auth', '~> 6.3.0'
 
   target 'instagram_cloneTests' do
     inherit! :search_paths
