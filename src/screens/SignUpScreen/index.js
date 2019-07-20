@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import SignUpForm from './components/SignUpForm';
+import { makeRegister } from '../../store/register/actions';
 
 class SignUpScreen extends React.Component {
   constructor(props) {
@@ -8,10 +12,15 @@ class SignUpScreen extends React.Component {
     this.state = {};
   }
 
+  handleRegister = values => {
+    const { register } = this.props;
+    register(values);
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <SignUpForm />
+        <SignUpForm handleRegister={this.handleRegister} />
       </View>
     );
   }
@@ -26,4 +35,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpScreen;
+const mapDispatchToProps = dispatch => ({
+  register: values => {
+    dispatch(makeRegister(values));
+  },
+});
+
+SignUpScreen.propTypes = {
+  register: PropTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignUpScreen);

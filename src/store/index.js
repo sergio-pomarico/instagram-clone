@@ -1,28 +1,27 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
-import { reducer as form } from 'redux-form';
 import { all } from 'redux-saga/effects';
+import { reducer as form } from 'redux-form';
 
 // Reducers & Sagas
-import { registerReducer, resgisterSagas } from './register';
+import { authReducer, authSaga } from './auth';
 
-const rootReducer = combineReducers({
-  register: registerReducer,
+const metaReducers = combineReducers({
+  auth: authReducer,
   form,
 });
 
 // Saga
 function* rootSaga() {
-  yield all([resgisterSagas]);
+  yield all([...authSaga]);
 }
 
-// Middlewares
 const sagaMiddleware = createSagaMiddleware();
 
-const enhancers = composeWithDevTools(applyMiddleware(sagaMiddleware));
+// Middlewares
+const middlewares = [sagaMiddleware];
 
-const store = createStore(rootReducer, enhancers);
+const store = createStore(metaReducers, applyMiddleware(...middlewares));
 
 sagaMiddleware.run(rootSaga);
 

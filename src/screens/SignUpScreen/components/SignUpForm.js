@@ -7,19 +7,14 @@ import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 
 const SignUpForm = props => {
-  const { handleSubmit } = props;
+  const { handleSubmit, handleRegister } = props;
   return (
     <View style={styles.container}>
       <Field name="name" component={Input} placeholder="name" />
       <Field name="email" component={Input} placeholder="email" isEmail />
       <Field name="password" component={Input} placeholder="password" isPass />
       <Field name="confirm" component={Input} placeholder="confirm password" isPass />
-      <Button
-        text="Register"
-        onPress={handleSubmit(values => {
-          console.log(values);
-        })}
-      />
+      <Button text="Register" onPress={handleSubmit(values => handleRegister(values))} />
     </View>
   );
 };
@@ -56,6 +51,7 @@ const validate = values => {
 
 SignUpForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  handleRegister: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
