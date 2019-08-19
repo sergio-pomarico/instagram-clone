@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 
 // import TabNavigator from './src/navigation';
 import LoginNavigator from './src/navigation/login';
@@ -18,6 +19,10 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {};
+  }
+
+  componentDidMount() {
+    SplashScreen.hide();
   }
 
   render() {
