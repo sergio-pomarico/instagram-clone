@@ -37,16 +37,17 @@
 		2DCD954D1E0B4F2C00145EB5 /* instagram_cloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* instagram_cloneTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		36D2880C0E2055248287D68A /* libPods-instagram_clone-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A3219D94FA2D762082D535 /* libPods-instagram_clone-tvOSTests.a */; };
+		495359E6230A16BC007C838B /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 495359E5230A16B1007C838B /* libSplashScreen.a */; };
+		495359E7230A16EF007C838B /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3080BE922DB8AA700A64DCB /* libRNFirebase.a */; };
+		495359E8230A1704007C838B /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EEAC0C22DB828F00C66A90 /* libRNGestureHandler.a */; };
+		495359E9230A171E007C838B /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EEAC0622DB828F00C66A90 /* libBVLinearGradient.a */; };
 		53E61CED16CD647C25F7EF72 /* libPods-instagram_clone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB2F376442B913D1AA94E07 /* libPods-instagram_clone.a */; };
 		57A63AFA0150441D972A323B /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEF7A455FAE4AB3B90CB167 /* libRNGestureHandler-tvOS.a */; };
 		58BC3A8C9C4BF242C17F5BF6 /* libPods-instagram_cloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8EFA2193C2689304C15C99 /* libPods-instagram_cloneTests.a */; };
 		6A3E71690EB1DFAAAC5F00F8 /* libPods-instagram_clone-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B944F79401CB6267689418 /* libPods-instagram_clone-tvOS.a */; };
-		6C5D06FD54D74424BFD1C4A5 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F664534A7648494A8BF22E9B /* libBVLinearGradient.a */; };
-		7B63039DA1C3435590A8B86F /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8522F894D6CE4DAD9CF57580 /* libRNFirebase.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A3080B9F22DB895D00A64DCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3080B9E22DB895D00A64DCB /* GoogleService-Info.plist */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		DA2F86D0377242798A1082A6 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7EB887BD642619D861A76 /* libRNGestureHandler.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -262,6 +263,13 @@
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
 		};
+		495359E4230A16B1007C838B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495359B6230A16B1007C838B /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -394,6 +402,7 @@
 		407A34263A7E5CBDC2E01459 /* Pods-instagram_cloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_cloneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram_cloneTests/Pods-instagram_cloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47B944F79401CB6267689418 /* libPods-instagram_clone-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagram_clone-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48087EB593860B10A66E3BCA /* Pods-instagram_cloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_cloneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram_cloneTests/Pods-instagram_cloneTests.release.xcconfig"; sourceTree = "<group>"; };
+		495359B6230A16B1007C838B /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		498B3B83807DDDB2F87DD1E9 /* Pods-instagram_clone-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram_clone-tvOSTests/Pods-instagram_clone-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5FEF7A455FAE4AB3B90CB167 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
@@ -438,12 +447,13 @@
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
+				495359E6230A16BC007C838B /* libSplashScreen.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				DA2F86D0377242798A1082A6 /* libRNGestureHandler.a in Frameworks */,
-				6C5D06FD54D74424BFD1C4A5 /* libBVLinearGradient.a in Frameworks */,
+				495359E8230A1704007C838B /* libRNGestureHandler.a in Frameworks */,
+				495359E9230A171E007C838B /* libBVLinearGradient.a in Frameworks */,
+				495359E7230A16EF007C838B /* libRNFirebase.a in Frameworks */,
 				53E61CED16CD647C25F7EF72 /* libPods-instagram_clone.a in Frameworks */,
-				7B63039DA1C3435590A8B86F /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +618,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		495359B7230A16B1007C838B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				495359E5230A16B1007C838B /* libSplashScreen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +647,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				495359B6230A16B1007C838B /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -837,6 +856,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 3NV86LU9N3;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -853,6 +875,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -919,6 +942,10 @@
 				{
 					ProductGroup = A3EEABFF22DB828E00C66A90 /* Products */;
 					ProjectRef = 388D5ABFC60E45EBA95BEDC2 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = 495359B7230A16B1007C838B /* Products */;
+					ProjectRef = 495359B6230A16B1007C838B /* SplashScreen.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1126,6 +1153,13 @@
 			fileType = archive.ar;
 			path = libcxxreact.a;
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		495359E5230A16B1007C838B /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 495359E4230A16B1007C838B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -1519,11 +1553,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 3NV86LU9N3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = instagram_clone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1532,7 +1568,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.codeo.instagram_clone";
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeo.instagram_clone;
 				PRODUCT_NAME = instagram_clone;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1544,11 +1580,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3NV86LU9N3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = instagram_clone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1557,7 +1595,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.codeo.instagram_clone";
+				PRODUCT_BUNDLE_IDENTIFIER = co.codeo.instagram_clone;
 				PRODUCT_NAME = instagram_clone;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
