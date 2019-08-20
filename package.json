@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios --simulator='iPhone X'",
     "android": "react-native run-android",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint './src/**/*.{js,jsx}'"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -15,6 +16,7 @@
     "react-native-firebase": "^5.5.5",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-linear-gradient": "^2.5.4",
+    "react-native-root-toast": "^3.1.2",
     "react-native-splash-screen": "^3.2.0",
     "react-navigation": "^3.11.0",
     "react-redux": "^7.0.3",
@@ -35,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
+    "husky": "^3.0.4",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
     "prettier": "^1.17.1",
@@ -42,5 +45,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }

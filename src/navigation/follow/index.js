@@ -1,8 +1,8 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import FollowTabs from './tabs';
-import ProfileScreen from '../../screens/ProfileScreen';
-import CommentsScreen from '../../screens/CommentsScreen';
-import PostsScreen from '../../screens/PostsScreen';
+import Profile from '../../screens/Profile';
+import Comments from '../../screens/Comments';
+import Posts from '../../screens/Posts';
 
 const FollowNav = createStackNavigator(
   {
@@ -13,13 +13,13 @@ const FollowNav = createStackNavigator(
       },
     },
     Author: {
-      screen: ProfileScreen,
+      screen: Profile,
     },
     Posts: {
-      screen: PostsScreen,
+      screen: Posts,
     },
     Comments: {
-      screen: CommentsScreen,
+      screen: Comments,
       navigationOptions: {
         tabBarVisible: false,
       },

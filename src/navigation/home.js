@@ -1,26 +1,26 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import HomeScreen from '../screens/HomeScreen';
-import PostsScreen from '../screens/PostsScreen';
-import CommentsScreen from '../screens/CommentsScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import Home from '../screens/Home';
+import Posts from '../screens/Posts';
+import Comments from '../screens/Comments';
+import Profile from '../screens/Profile';
 
 const HomeNav = createStackNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: Home,
     },
     Author: {
-      screen: ProfileScreen,
+      screen: Profile,
     },
     Comments: {
-      screen: CommentsScreen,
+      screen: Comments,
       navigationOptions: {
         tabBarVisible: false,
       },
     },
     Posts: {
-      screen: PostsScreen,
+      screen: Posts,
     },
   },
   {

@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
-import Input from '../../../components/Input';
-import Button from '../../../components/Button';
+import Input from './Input';
+import Button from './Button';
 
 const LoginForm = props => {
   const { handleSubmit } = props;

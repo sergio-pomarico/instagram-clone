@@ -1,23 +1,23 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import SearchScreen from '../screens/SearchScreen';
-import PostsScreen from '../screens/PostsScreen';
-import CommentsScreen from '../screens/CommentsScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import Search from '../screens/Search';
+import Posts from '../screens/Posts';
+import Comments from '../screens/Comments';
+import Profile from '../screens/Profile';
 
 const SearchNav = createStackNavigator(
   {
     Search: {
-      screen: SearchScreen,
+      screen: Search,
     },
     Posts: {
-      screen: PostsScreen,
+      screen: Posts,
     },
     Author: {
-      screen: ProfileScreen,
+      screen: Profile,
     },
     Comments: {
-      screen: CommentsScreen,
+      screen: Comments,
       navigationOptions: {
         tabBarVisible: false,
       },

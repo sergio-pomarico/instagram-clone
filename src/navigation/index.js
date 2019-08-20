@@ -3,8 +3,8 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import HomeNav from './home';
 import SearchNav from './search';
 import FollowNav from './follow';
-import AddScreen from '../screens/AddScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import Add from '../screens/Add';
+import Profile from '../screens/Profile';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -15,13 +15,13 @@ const TabNavigator = createBottomTabNavigator(
       screen: SearchNav,
     },
     Add: {
-      screen: AddScreen,
+      screen: Add,
     },
     Follow: {
       screen: FollowNav,
     },
     Profile: {
-      screen: ProfileScreen,
+      screen: Profile,
     },
   },
   {

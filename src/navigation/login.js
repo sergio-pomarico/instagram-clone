@@ -1,25 +1,21 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import LoginScreen from '../screens/LoginScreen';
-import SignUpScreen from '../screens/SignUpScreen';
+import Login from '../screens/Login';
+import Register from '../screens/Register';
 
-const LoginNavigator = createStackNavigator(
-  {
-    Login: {
-      screen: LoginScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    SignUp: {
-      screen: SignUpScreen,
+const LoginNavigator = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: null,
     },
   },
-  {
+  Register: {
+    screen: Register,
     navigationOptions: {
-      title: 'Login',
+      title: 'Register',
     },
-  }
-);
+  },
+});
 
 export default createAppContainer(LoginNavigator);

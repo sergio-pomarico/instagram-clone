@@ -3,8 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import SignUpForm from './components/SignUpForm';
-import { makeRegister } from '../../store/register/actions';
+import RegisterForm from '../components/RegisterForm';
+import { register } from '../store/auth/actions';
 
 class SignUpScreen extends React.Component {
   constructor(props) {
@@ -13,14 +13,14 @@ class SignUpScreen extends React.Component {
   }
 
   handleRegister = values => {
-    const { register } = this.props;
-    register(values);
+    const { makeRegister } = this.props;
+    makeRegister(values);
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <SignUpForm handleRegister={this.handleRegister} />
+        <RegisterForm handleRegister={this.handleRegister} />
       </View>
     );
   }
@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
 });
 
 const mapDispatchToProps = dispatch => ({
-  register: values => {
-    dispatch(makeRegister(values));
+  makeRegister: values => {
+    dispatch(register(values));
   },
 });
 
 SignUpScreen.propTypes = {
-  register: PropTypes.func.isRequired,
+  makeRegister: PropTypes.func.isRequired,
 };
 
 export default connect(
