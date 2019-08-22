@@ -12,6 +12,8 @@ target 'instagram_clone' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'instagram_cloneTests' do
     inherit! :search_paths
     # Pods for testing
