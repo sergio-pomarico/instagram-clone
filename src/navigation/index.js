@@ -1,10 +1,16 @@
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import {
+  createBottomTabNavigator,
+  createAppContainer,
+  createSwitchNavigator,
+} from 'react-navigation';
 
 import HomeNav from './home';
 import SearchNav from './search';
 import FollowNav from './follow';
 import Add from '../screens/Add';
 import Profile from '../screens/Profile';
+import Splash from '../screens/splash';
+import Auth from './auth';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -29,4 +35,17 @@ const TabNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigator);
+const AppNavigation = createAppContainer(
+  createSwitchNavigator(
+    {
+      Splash,
+      App: TabNavigator,
+      Auth,
+    },
+    {
+      initialRouteName: 'Splash',
+    }
+  )
+);
+
+export default AppNavigation;

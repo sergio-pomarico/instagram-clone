@@ -14,6 +14,7 @@ const LoginNavigator = createStackNavigator({
     screen: Register,
     navigationOptions: {
       title: 'Register',
+      headerTintColor: '#FF217A',
     },
   },
 });
