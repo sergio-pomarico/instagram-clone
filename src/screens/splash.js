@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator, StyleSheet, View, StatusBar } from 'react-native';
+import { connect } from 'react-redux';
+
+import { session } from '../store/auth/actions';
 
 class Splash extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  componentDidMount() {
+    const { checkSession } = this.props;
+    checkSession();
   }
 
   render() {
@@ -25,4 +29,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Splash;
+Splash.propTypes = {
+  checkSession: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  checkSession: values => {
+    dispatch(session(values));
+  },
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Splash);

@@ -1,4 +1,12 @@
-import { REGISTER, REGISTER_SUCCESS, AUTH_ERROR, LOGIN, LOGIN_SUCCESS } from './types';
+import {
+  REGISTER,
+  REGISTER_SUCCESS,
+  AUTH_ERROR,
+  LOGIN,
+  LOGIN_SUCCESS,
+  CHECK_SESSION,
+  CHECK_SESSION_SUCCESS,
+} from './types';
 
 export const register = ({ email, password, name }) => ({
   email,
@@ -16,6 +24,15 @@ export const login = ({ email, password }) => ({
 export const loginSuccess = user => ({
   user,
   type: LOGIN_SUCCESS,
+});
+
+export const session = () => ({
+  type: CHECK_SESSION,
+});
+
+export const sessionSuccess = user => ({
+  user,
+  type: CHECK_SESSION_SUCCESS,
 });
 
 export const registerSuccess = user => ({

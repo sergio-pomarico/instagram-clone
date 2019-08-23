@@ -1,4 +1,12 @@
-import { REGISTER, REGISTER_SUCCESS, AUTH_ERROR, LOGIN, LOGIN_SUCCESS } from './types';
+import {
+  REGISTER,
+  REGISTER_SUCCESS,
+  AUTH_ERROR,
+  LOGIN,
+  LOGIN_SUCCESS,
+  CHECK_SESSION,
+  CHECK_SESSION_SUCCESS,
+} from './types';
 
 const initialState = {
   user: null,
@@ -18,6 +26,13 @@ export default function authReducer(state = initialState, action) {
       return { ...state };
     }
     case LOGIN_SUCCESS: {
+      const { user } = action;
+      return { ...state, user };
+    }
+    case CHECK_SESSION: {
+      return { ...state };
+    }
+    case CHECK_SESSION_SUCCESS: {
       const { user } = action;
       return { ...state, user };
     }

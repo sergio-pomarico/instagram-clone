@@ -9,7 +9,7 @@ import SearchNav from './search';
 import FollowNav from './follow';
 import Add from '../screens/Add';
 import Profile from '../screens/Profile';
-import Splash from '../screens/splash';
+import Splash from '../screens/Splash';
 import Auth from './auth';
 
 const TabNavigator = createBottomTabNavigator(
