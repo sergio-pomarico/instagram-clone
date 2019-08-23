@@ -7,17 +7,12 @@ import Input from './Input';
 import Button from './Button';
 
 const LoginForm = props => {
-  const { handleSubmit } = props;
+  const { handleSubmit, handleLogin } = props;
   return (
     <View style={styles.container}>
       <Field name="email" component={Input} placeholder="email" isEmail />
       <Field name="password" component={Input} placeholder="password" isPass />
-      <Button
-        text="Login"
-        onPress={handleSubmit(values => {
-          console.log(values);
-        })}
-      />
+      <Button text="Login" onPress={handleSubmit(values => handleLogin(values))} />
     </View>
   );
 };
@@ -42,6 +37,7 @@ const validate = values => {
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

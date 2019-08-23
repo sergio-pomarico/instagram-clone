@@ -6,6 +6,7 @@ import { compose } from 'redux';
 
 import Loader from '../components/Loading';
 import LoginForm from '../components/LoginForm';
+import { login } from '../store/auth/actions';
 
 const logo = require('../../assets/logo.png');
 
@@ -20,11 +21,16 @@ class Login extends React.Component {
     navigation.navigate('Register');
   };
 
+  handleLogin = values => {
+    const { makeLogin } = this.props;
+    makeLogin(values);
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Image source={logo} style={styles.logo} />
-        <LoginForm />
+        <LoginForm handleLogin={this.handleLogin} />
         <TouchableOpacity onPress={this.goToRegister}>
           <Text style={styles.registerText}>or create an account</Text>
         </TouchableOpacity>
@@ -35,6 +41,7 @@ class Login extends React.Component {
 
 Login.propTypes = {
   navigation: PropTypes.object.isRequired,
+  makeLogin: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -63,10 +70,16 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  makeLogin: values => {
+    dispatch(login(values));
+  },
+});
+
 export default compose(
   connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
   ),
   Loader
 )(Login);

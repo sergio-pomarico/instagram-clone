@@ -2,11 +2,13 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
 
 import RegisterForm from '../components/RegisterForm';
+import Loader from '../components/Loading';
 import { register } from '../store/auth/actions';
 
-class SignUpScreen extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -35,17 +37,27 @@ const styles = StyleSheet.create({
   },
 });
 
+Register.propTypes = {
+  makeRegister: PropTypes.func.isRequired,
+};
+
 const mapDispatchToProps = dispatch => ({
   makeRegister: values => {
     dispatch(register(values));
   },
 });
 
-SignUpScreen.propTypes = {
-  makeRegister: PropTypes.func.isRequired,
+const mapStateToProps = state => {
+  const { loading } = state.ui;
+  return {
+    loading,
+  };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(SignUpScreen);
+export default compose(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
+  Loader
+)(Register);

@@ -12,7 +12,8 @@ import { Provider } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 
 // import TabNavigator from './src/navigation';
-import LoginNavigator from './src/navigation/login';
+import AppNavigation from './src/navigation';
+import NavigationService from './src/navigation/navigationService';
 import Store from './src/store';
 
 export default class App extends Component {
@@ -29,7 +30,11 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Provider store={Store}>
-          <LoginNavigator />
+          <AppNavigation
+            ref={navigatorRef => {
+              NavigationService.setTopLevelNavigator(navigatorRef);
+            }}
+          />
         </Provider>
       </View>
     );
