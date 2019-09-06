@@ -6,6 +6,8 @@ import {
   LOGIN_SUCCESS,
   CHECK_SESSION,
   CHECK_SESSION_SUCCESS,
+  LOGOUT,
+  LOGOUT_SUCCESS,
 } from './types';
 
 const initialState = {
@@ -39,6 +41,12 @@ export default function authReducer(state = initialState, action) {
     case AUTH_ERROR: {
       const { error } = action;
       return { ...state, error };
+    }
+    case LOGOUT:
+      return { ...state };
+    case LOGOUT_SUCCESS: {
+      const { user } = action;
+      return { ...state, user };
     }
     default:
       return state;

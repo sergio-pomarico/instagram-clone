@@ -1,16 +1,22 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { logout } from '../store/auth/actions';
 
-class ProfileScreen extends React.Component {
+class Profile extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
 
   render() {
+    const { Logout } = this.props;
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <TouchableOpacity onPress={() => Logout()}>
+          <Text>Logout</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -24,4 +30,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+Profile.propTypes = {
+  Logout: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  Logout: values => {
+    dispatch(logout(values));
+  },
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Profile);

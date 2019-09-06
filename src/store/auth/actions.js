@@ -6,6 +6,8 @@ import {
   LOGIN_SUCCESS,
   CHECK_SESSION,
   CHECK_SESSION_SUCCESS,
+  LOGOUT,
+  LOGOUT_SUCCESS,
 } from './types';
 
 export const register = ({ email, password, name }) => ({
@@ -33,6 +35,15 @@ export const session = () => ({
 export const sessionSuccess = user => ({
   user,
   type: CHECK_SESSION_SUCCESS,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
+});
+
+export const logoutSuccess = user => ({
+  user,
+  type: LOGOUT_SUCCESS,
 });
 
 export const registerSuccess = user => ({
