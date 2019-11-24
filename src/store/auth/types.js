@@ -1,9 +1,0 @@
-export const REGISTER = 'REGISTER';
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
-export const LOGIN = 'LOGIN';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const AUTH_ERROR = 'AUTH_ERROR';
-export const CHECK_SESSION = 'CHECK_SESSION';
-export const CHECK_SESSION_SUCCESS = 'CHECK_SESSION_SUCCESS';
-export const LOGOUT = 'LOGOUT';
-export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
