@@ -1,5 +1,5 @@
 import {takeLatest, put, call} from 'redux-saga/effects';
-import firebase from 'react-native-firebase';
+import auth from '@react-native-firebase/auth';
 import {REGISTER, LOGIN, CHECK_SESSION, LOGOUT} from './types';
 import UniversalToast from '../../components/Toast';
 import showLoading from '../ui/actions';
@@ -16,9 +16,7 @@ export function* register(action) {
   yield put(showLoading(true));
   try {
     const {email, password, name} = action;
-    const {user} = yield firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password);
+    const {user} = yield auth().createUserWithEmailAndPassword(email, password);
     if (user) {
       yield put(showLoading(false));
       yield user.updateProfile({displayName: name});
@@ -37,9 +35,7 @@ export function* login(action) {
   yield put(showLoading(true));
   try {
     const {email, password} = action;
-    const {user} = yield firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password);
+    const {user} = yield auth().signInWithEmailAndPassword(email, password);
     if (user) {
       yield put(showLoading(false));
       yield put(loginSuccess(user.toJSON()));
@@ -67,7 +63,7 @@ export function* session() {
 
 const checkSession = () => {
   return new Promise((resolve, reject) => {
-    firebase.auth().onAuthStateChanged(user => {
+    auth().onAuthStateChanged(user => {
       if (user) {
         resolve(user);
       } else {
@@ -79,8 +75,7 @@ const checkSession = () => {
 
 const singOut = () => {
   return new Promise((resolve, reject) => {
-    firebase
-      .auth()
+    auth()
       .signOut()
       .then(() => resolve())
       .catch(error => reject(new Error(error.message)));
