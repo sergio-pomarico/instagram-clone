@@ -305,6 +305,8 @@ PODS:
     - RNFBApp
   - RNGestureHandler (1.5.1):
     - React
+  - RNVectorIcons (6.6.0):
+    - React
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -340,6 +342,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -419,6 +422,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -467,6 +472,7 @@ SPEC CHECKSUMS:
   RNFBApp: cce40af7fd9a8bc12858ce5ec21e20ac7987e0ca
   RNFBAuth: 3b4847dd59141f4c7ad59eee50a37347f3db8eb7
   RNGestureHandler: 7add966bb5d90ee8cf38d4341f87814474357972
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: 10fbc1ea059cf50fc93b10168af3a742f966ca4c
