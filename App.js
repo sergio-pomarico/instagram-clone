@@ -1,17 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Provider} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 
-// import TabNavigator from './src/navigation';
 import AppNavigation from './src/navigation';
 import NavigationService from './src/navigation/navigationService';
 import Store from './src/store';
