@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Provider} from 'react-redux';
-// import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen';
 
 // import TabNavigator from './src/navigation';
 import AppNavigation from './src/navigation';
@@ -23,7 +23,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    // SplashScreen.hide();
+    SplashScreen.hide();
   }
 
   render() {
