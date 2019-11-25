@@ -1,7 +1,5 @@
-import {
-  createMaterialTopTabNavigator,
-  createAppContainer,
-} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
+import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 
 import Follow from '../../screens/Follow';
 

@@ -1,4 +1,4 @@
-package com.instagram;
+package co.codeo.instagram;
 
 import android.app.Application;
 import android.content.Context;

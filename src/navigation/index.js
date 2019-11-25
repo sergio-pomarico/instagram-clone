@@ -1,8 +1,5 @@
-import {
-  createBottomTabNavigator,
-  createAppContainer,
-  createSwitchNavigator,
-} from 'react-navigation';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import HomeNav from './home';
 import SearchNav from './search';

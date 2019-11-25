@@ -1,4 +1,4 @@
-package com.instagram;
+package co.codeo.instagram;
 
 import com.facebook.react.ReactActivity;
 
