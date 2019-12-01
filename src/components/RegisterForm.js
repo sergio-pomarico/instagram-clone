@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 
 import Input from './Input';
 import Button from './Button';
+import AddImage from './AddImage';
 
 const SignUpForm = props => {
   const {handleSubmit, handleRegister} = props;
   return (
     <View style={styles.container}>
+      <AddImage title="Choose your profile image" size={180} />
       <Field name="name" component={Input} placeholder="name" />
       <Field name="email" component={Input} placeholder="email" isEmail />
       <Field name="password" component={Input} placeholder="password" isPass />
