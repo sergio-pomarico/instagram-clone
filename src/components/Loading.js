@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ActivityIndicator, Modal} from 'react-native';
+import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
 
 const Loading = props => {
@@ -22,17 +23,16 @@ Loading.defaultProps = {
 };
 
 const Loader = WrappedComponent => {
-  return class LoadingScreen extends React.PureComponent {
-    render() {
-      const {loading} = this.props;
-      return (
-        <>
-          <WrappedComponent {...this.props} />
-          {loading && <Loading visible={loading} />}
-        </>
-      );
-    }
+  const LoadingScreen = props => {
+    const loading = useSelector(state => state.ui.loading);
+    return (
+      <>
+        <WrappedComponent {...props} />
+        {loading && <Loading visible={loading} />}
+      </>
+    );
   };
+  return LoadingScreen;
 };
 
 Loader.propTypes = {

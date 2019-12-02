@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {View, StyleSheet, TouchableOpacity, Text, Image} from 'react-native';
-import {connect} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {compose} from 'redux';
 
 import Loader from '../components/Loading';
@@ -10,38 +10,30 @@ import {login} from '../store/auth/actions';
 
 const logo = require('../../assets/logo.png');
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  goToRegister = () => {
-    const {navigation} = this.props;
+const Login = props => {
+  const dispatch = useDispatch();
+  const {navigation} = props;
+  const goToRegister = () => {
     navigation.navigate('Register');
   };
 
-  handleLogin = values => {
-    const {makeLogin} = this.props;
-    makeLogin(values);
+  const handleLogin = values => {
+    dispatch(login(values));
   };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image source={logo} style={styles.logo} />
-        <LoginForm handleLogin={this.handleLogin} />
-        <TouchableOpacity onPress={this.goToRegister}>
-          <Text style={styles.registerText}>or create an account</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Image source={logo} style={styles.logo} />
+      <LoginForm handleLogin={handleLogin} />
+      <TouchableOpacity onPress={goToRegister}>
+        <Text style={styles.registerText}>or create an account</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 Login.propTypes = {
   navigation: PropTypes.object.isRequired,
-  makeLogin: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -63,23 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  const {loading} = state.ui;
-  return {
-    loading,
-  };
-};
-
-const mapDispatchToProps = dispatch => ({
-  makeLogin: values => {
-    dispatch(login(values));
-  },
-});
-
-export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
-  Loader,
-)(Login);
+export default compose(Loader)(Login);
