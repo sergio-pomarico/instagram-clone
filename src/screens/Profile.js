@@ -4,23 +4,16 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logout} from '../store/auth/actions';
 
-class Profile extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    const {Logout} = this.props;
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity onPress={() => Logout()}>
-          <Text>Logout</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
+const ProfileScreen = props => {
+  const {Logout} = props;
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={() => Logout()}>
+        <Text>Logout</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-Profile.propTypes = {
+ProfileScreen.propTypes = {
   Logout: PropTypes.func.isRequired,
 };
 
@@ -43,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   null,
   mapDispatchToProps,
-)(Profile);
+)(ProfileScreen);

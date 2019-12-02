@@ -1,20 +1,13 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-class PostsScreen extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Home</Text>
-      </View>
-    );
-  }
-}
+const PostsScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Post</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
