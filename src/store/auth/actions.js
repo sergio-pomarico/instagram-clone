@@ -8,6 +8,8 @@ import {
   CHECK_SESSION_SUCCESS,
   LOGOUT,
   LOGOUT_SUCCESS,
+  ADD_PROFILE_IMAGE,
+  CLEAN_PROFILE_IMAGE,
 } from './types';
 
 export const register = ({email, password, name}) => ({
@@ -54,4 +56,13 @@ export const registerSuccess = user => ({
 export const authFailure = error => ({
   error,
   type: AUTH_ERROR,
+});
+
+export const addImage = image => ({
+  image,
+  type: ADD_PROFILE_IMAGE,
+});
+
+export const cleanImage = () => ({
+  type: CLEAN_PROFILE_IMAGE,
 });

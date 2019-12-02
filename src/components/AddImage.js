@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import ImagePicker from 'react-native-image-picker';
-import {StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import UniversalToast from './Toast';
 import ProgressiveImage from './ProgressiveImage';
 import PropTypes from 'prop-types';
 
 const AddImage = props => {
-  const {title, size = 150, shape = 'circle'} = props;
+  const {title, size = 150, shape = 'circle', addImage, updateForm} = props;
   const borderRadius = shape === 'circle' ? size / 2 : 0;
   const [image, setImage] = useState(null);
   const options = {title};
@@ -18,6 +18,8 @@ const AddImage = props => {
         UniversalToast.showError(error);
       } else if (!error && !didCancel) {
         setImage(response.uri);
+        addImage(response.uri);
+        updateForm();
       }
     });
   };
@@ -25,7 +27,7 @@ const AddImage = props => {
     <TouchableOpacity
       style={[styles.container, {width: size, height: size, borderRadius}]}
       onPress={launchImagePicker}>
-      {!image && <Icon name="camera" color="#A2A2A2" size={25} />}
+      {!image && <Icon name="camera" color="#A2A2A2" size={30} />}
       {image && (
         <ProgressiveImage
           source={{uri: `${image}?w=${size * 2}&buster=${Math.random()}`}}
@@ -55,6 +57,8 @@ AddImage.propTypes = {
   title: PropTypes.string.isRequired,
   size: PropTypes.number,
   shape: PropTypes.bool,
+  addImage: PropTypes.func.isRequired,
+  updateForm: PropTypes.func,
 };
 
 export default AddImage;
