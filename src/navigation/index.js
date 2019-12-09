@@ -9,6 +9,8 @@ import Profile from '../screens/Profile';
 import Splash from '../screens/Splash';
 import Auth from './auth';
 
+import TabBar from '../components/TabBar';
+
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
@@ -28,7 +30,8 @@ const TabNavigator = createBottomTabNavigator(
     },
   },
   {
-    tabBarPosition: 'bottom',
+    tabBarComponent: TabBar,
+    initialRouteName: 'Home',
   },
 );
 
