@@ -85,7 +85,7 @@ const singOut = () => {
 export function* logout() {
   try {
     yield call(singOut);
-    yield put(logoutSuccess(null));
+    yield put(logoutSuccess({}));
     NavigationService.navigate('Login');
   } catch (error) {
     NavigationService.navigate('Login');

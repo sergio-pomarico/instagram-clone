@@ -1,14 +1,27 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 import {logout} from '../store/auth/actions';
+import {useDispatch, useSelector} from 'react-redux';
+import AddImage from '../components/AddImage';
+import {addImage} from '../store/auth/actions';
 
 const ProfileScreen = props => {
-  const {Logout} = props;
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.auth.user);
+  const {photoURL = null, displayName = '', email = ''} = user;
+  const Logout = () => dispatch(logout());
+  const addProfileImage = image => dispatch(addImage(image));
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => Logout()}>
+      <AddImage
+        title="Choose your profile image"
+        size={180}
+        addImage={addProfileImage}
+        photo={photoURL}
+      />
+      <Text>{displayName}</Text>
+      <Text>{email}</Text>
+      <TouchableOpacity onPress={Logout}>
         <Text>Logout</Text>
       </TouchableOpacity>
     </View>
@@ -19,21 +32,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 88,
   },
 });
 
-ProfileScreen.propTypes = {
-  Logout: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = dispatch => ({
-  Logout: values => {
-    dispatch(logout(values));
-  },
-});
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ProfileScreen);
+export default ProfileScreen;

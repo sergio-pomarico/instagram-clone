@@ -7,9 +7,9 @@ import ProgressiveImage from './ProgressiveImage';
 import PropTypes from 'prop-types';
 
 const AddImage = props => {
-  const {title, size = 150, shape = 'circle', addImage, updateForm} = props;
+  const {title, size = 150, shape = 'circle', addImage, photo} = props;
   const borderRadius = shape === 'circle' ? size / 2 : 0;
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(photo);
   const options = {title};
   const launchImagePicker = () => {
     ImagePicker.showImagePicker(options, response => {
@@ -19,7 +19,6 @@ const AddImage = props => {
       } else if (!error && !didCancel) {
         setImage(response.uri);
         addImage(response.uri);
-        updateForm();
       }
     });
   };

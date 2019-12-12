@@ -1,50 +1,15 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import {Field, reduxForm, blur} from 'redux-form';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Field, reduxForm} from 'redux-form';
 import PropTypes from 'prop-types';
 
 import Input from './Input';
 import Button from './Button';
-import AddImage from './AddImage';
-
-import {useDispatch} from 'react-redux';
-import {addImage, cleanImage} from '../store/auth/actions';
-
-const Image = props => {
-  const {meta} = props;
-  return (
-    <View>
-      {meta.error && meta.touched && (
-        <Text style={styles.error}>{meta.error}</Text>
-      )}
-    </View>
-  );
-};
 
 const SignUpForm = props => {
   const {handleSubmit, handleRegister} = props;
-  const dispatch = useDispatch();
-
-  const updateForm = () => dispatch(blur('SignUpForm', 'photo', Date.now()));
-  const addProfileImage = image => dispatch(addImage(image));
-
-  /* eslint-disable  react-hooks/exhaustive-deps */
-  useEffect(() => {
-    return () => {
-      dispatch(cleanImage());
-    };
-  }, []);
-  /* eslint-enable  react-hooks/exhaustive-deps */
-
   return (
     <View style={styles.container}>
-      <AddImage
-        title="Choose your profile image"
-        size={180}
-        addImage={addProfileImage}
-        updateForm={updateForm}
-      />
-      <Field name="photo" component={Image} />
       <Field name="name" component={Input} placeholder="name" />
       <Field name="email" component={Input} placeholder="email" isEmail />
       <Field name="password" component={Input} placeholder="password" isPass />
@@ -62,12 +27,8 @@ const SignUpForm = props => {
   );
 };
 
-const validate = (values, props) => {
+const validate = values => {
   const errors = {};
-  if (!props.image) {
-    errors.photo = 'photo is required';
-  }
-
   if (!values.name) {
     errors.name = 'name is required';
   } else if (values.name.length < 5) {

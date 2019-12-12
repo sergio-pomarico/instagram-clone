@@ -1,24 +1,26 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {compose} from 'redux';
 
 import RegisterForm from '../components/RegisterForm';
+import Header from '../components/Header';
 import Loader from '../components/Loading';
 import {register} from '../store/auth/actions';
 
 const Register = props => {
   const dispatch = useDispatch();
+  const {navigation} = props;
+  const onBack = () => navigation.goBack();
 
   const handleRegister = values => {
     dispatch(register(values));
   };
 
-  const image = useSelector(state => state.auth.image);
-
   return (
     <View style={styles.container}>
-      <RegisterForm handleRegister={handleRegister} image={image} />
+      <Header hasBack onBackPress={onBack} />
+      <RegisterForm handleRegister={handleRegister} />
     </View>
   );
 };

@@ -4,20 +4,18 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 
-const LoginNavigator = createStackNavigator({
-  Login: {
-    screen: Login,
-    navigationOptions: {
-      header: null,
+const LoginNavigator = createStackNavigator(
+  {
+    Login: {
+      screen: Login,
+    },
+    Register: {
+      screen: Register,
     },
   },
-  Register: {
-    screen: Register,
-    navigationOptions: {
-      title: 'Register',
-      headerTintColor: '#FF217A',
-    },
+  {
+    headerMode: 'none',
   },
-});
+);
 
 export default createAppContainer(LoginNavigator);
