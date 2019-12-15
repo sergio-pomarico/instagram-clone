@@ -1,5 +1,6 @@
 import {takeLatest, put, call} from 'redux-saga/effects';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import {REGISTER, LOGIN, CHECK_SESSION, LOGOUT} from './types';
 import UniversalToast from '../../components/Toast';
 import showLoading from '../ui/actions';
@@ -18,10 +19,12 @@ export function* register(action) {
     const {email, password, name} = action;
     const {user} = yield auth().createUserWithEmailAndPassword(email, password);
     if (user) {
-      yield put(showLoading(false));
       yield user.updateProfile({displayName: name});
       yield user.reload();
-      yield put(registerSuccess(user.toJSON()));
+      const updatedUser = auth().currentUser;
+      yield call(saveUser, updatedUser.toJSON());
+      yield put(registerSuccess(updatedUser.toJSON()));
+      yield put(showLoading(false));
       NavigationService.navigate('Home');
     }
   } catch (error) {
@@ -70,6 +73,21 @@ const checkSession = () => {
         reject(new Error('the session could not be determined'));
       }
     });
+  });
+};
+
+const saveUser = ({uid, displayName, email}) => {
+  const ref = firestore().collection('users');
+  return new Promise((resolve, reject) => {
+    ref
+      .doc(uid)
+      .set({
+        name: displayName,
+        email,
+        picture: null,
+      })
+      .then(() => resolve())
+      .catch(error => reject(new Error(error.message)));
   });
 };
 

@@ -8,7 +8,6 @@ import {
   CHECK_SESSION_SUCCESS,
   LOGOUT,
   LOGOUT_SUCCESS,
-  ADD_PROFILE_IMAGE,
 } from './types';
 
 const initialState = {
@@ -49,8 +48,6 @@ export default function authReducer(state = initialState, action) {
       const {user} = action;
       return {...state, user};
     }
-    case ADD_PROFILE_IMAGE:
-      return {...state};
     default:
       return state;
   }
