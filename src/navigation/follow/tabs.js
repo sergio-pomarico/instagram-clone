@@ -3,18 +3,13 @@ import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 
 import Follow from '../../screens/Follow';
 
-const FollowTabs = createMaterialTopTabNavigator(
-  {
-    Follow: {
-      screen: Follow,
-    },
-    Follower: {
-      screen: Follow,
-    },
+const FollowTabs = createMaterialTopTabNavigator({
+  Follow: {
+    screen: Follow,
   },
-  {
-    tabBarOptions: {},
+  Follower: {
+    screen: Follow,
   },
-);
+});
 
 export default createAppContainer(FollowTabs);

@@ -25,7 +25,7 @@ const HomeNav = createStackNavigator(
     },
   },
   {
-    navigationOptions: {},
+    headerMode: 'none',
   },
 );
 

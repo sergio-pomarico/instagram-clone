@@ -25,7 +25,7 @@ const SearchNav = createStackNavigator(
     },
   },
   {
-    navigationOptions: {},
+    headerMode: 'none',
   },
 );
 

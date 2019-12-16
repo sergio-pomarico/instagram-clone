@@ -10,9 +10,6 @@ const FollowNav = createStackNavigator(
   {
     Follow: {
       screen: FollowTabs,
-      navigationOptions: {
-        header: null,
-      },
     },
     Author: {
       screen: Profile,
@@ -27,7 +24,9 @@ const FollowNav = createStackNavigator(
       },
     },
   },
-  {},
+  {
+    headerMode: 'none',
+  },
 );
 
 export default createAppContainer(FollowNav);
