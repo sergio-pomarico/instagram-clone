@@ -1,3 +1,4 @@
 export const ADD_PROFILE_IMAGE = 'ADD_PROFILE_IMAGE';
+export const ADD_NEW_POST = 'ADD_NEW_POST';
 
-export default {ADD_PROFILE_IMAGE};
+export default {ADD_PROFILE_IMAGE, ADD_NEW_POST};

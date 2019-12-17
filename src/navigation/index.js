@@ -8,7 +8,6 @@ import FollowNav from './follow';
 import Add from '../screens/Add';
 import Profile from '../screens/Profile';
 import Splash from '../screens/Splash';
-import Post from '../screens/Posts';
 import Auth from './auth';
 
 import TabBar from '../components/TabBar';
@@ -36,15 +35,6 @@ const TabNavigator = createStackNavigator(
       {
         tabBarComponent: TabBar,
         initialRouteName: 'Home',
-        defaultNavigationOptions: {
-          tabBarOnPress: ({navigation, defaultHandler}) => {
-            if (navigation.state.key === 'Post') {
-              navigation.navigate('Add');
-            } else {
-              defaultHandler();
-            }
-          },
-        },
       },
     ),
     AddModal: {
@@ -54,7 +44,6 @@ const TabNavigator = createStackNavigator(
   {
     mode: 'modal',
     headerMode: 'none',
-    initialRouteName: 'default',
   },
 );
 
